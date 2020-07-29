@@ -5,6 +5,12 @@
  {{-- {{ dd($data_profile) }} --}}
  <br>
 <div class="container">
+    @if(session('sukses'))
+        <div class="alert alert-info float-center"  role="alert">
+            {{session('sukses')}}
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-6">
             <h2>Daftar profile</h2>
@@ -26,24 +32,25 @@
                     </div>
                     <div class="modal-body">
                         <form action="/pilput/tambah" method="POST">
+                            {{ csrf_field() }}
                             <div class="form-group">
                               <label for="exampleInputEmail1">NIK</label>
-                              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="masukan NIK">
+                              <input type="text" name="nik" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="masukan NIK">
 
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nama</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="masukan nama">
+                                <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="masukan nama">
                                 <
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Universitas</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="masukan universitas">
+                                <input type="text" name="alumni" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="masukan universitas">
 
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Agama</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
+                                <select class="form-control" name="agama" id="exampleFormControlSelect1">
                                   <option value="islam">Islam</option>
                                   <option value="sesat">Sesat</option>
                                   <option value="other">Other</option>
@@ -51,16 +58,16 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tgl lahir</label>
-                                <input type="date" class="form-control">
+                                <input type="date" name="tgl_lahir" class="form-control">
 
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Alamat</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" name="alamat" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Keterangan</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
                     </div>
@@ -85,6 +92,7 @@
         <th>Agama</th>
         <th>Tgl lahir</th>
         <th>Ket</th>
+        <th>Action</th>
     </tr>
     @foreach ($data_profile as $profile)
         <tr>
@@ -95,6 +103,7 @@
             <td>{{$profile->agama}}</td>
             <td>{{$profile->tgl_lahir}}</td>
             <td>{{$profile->deskripsi}}</td>
+        <td><a href="/pilput/edit/{{$profile->id}}" class="btn btn-sm btn-warning">Edit</a><a href="/plput/delete" class="btn btn-sm btn-danger">Delete</a></td>
         </tr>
     @endforeach
 </table>

@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::get('/pilput', 'PilputController@index');
 Route::get('/pilput/lihat', 'PilputController@beta');
 Route::post('/pilput/tambah', 'PilputController@create');
+Route::get('/pilput/edit/{id}', 'PilputController@edit');

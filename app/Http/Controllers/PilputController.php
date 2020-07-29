@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class PilputController extends Controller
 {
@@ -30,9 +31,10 @@ class PilputController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
-        //
+        \App\profile::create($req->all());
+        return redirect('/pilput/lihat')->with('sukses','Profile telah di tambah');
     }
 
     /**
@@ -65,7 +67,8 @@ class PilputController extends Controller
      */
     public function edit($id)
     {
-        //
+        $profile = \App\profile::find($id);
+        return view('super.editprofile');
     }
 
     /**
