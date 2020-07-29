@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 
 Route::get('/pilput', 'PilputController@index');
-Route::get('/pilput/lihat', 'PilputController@show');
+Route::get('/pilput/lihat', 'PilputController@beta');
+Route::post('/pilput/tambah', 'PilputController@create');

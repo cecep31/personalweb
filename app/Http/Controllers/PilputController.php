@@ -18,6 +18,13 @@ class PilputController extends Controller
         return view('super.home');
     }
 
+    public function beta()
+    {
+        $data_profile = \App\profile::all();
+
+        return view('super.profiler',['data_profile'=> $data_profile]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
