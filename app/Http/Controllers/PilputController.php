@@ -68,7 +68,7 @@ class PilputController extends Controller
     public function edit($id)
     {
         $profile = \App\profile::find($id);
-        return view('super.editprofile');
+        return view('super.editprofile',['profile'=>$profile]);
     }
 
     /**

@@ -13,7 +13,7 @@
 
 @yield('head')
 </head>
-<body>
+<body class="bg-info">
     @include('layout.nav')
 
         @yield('content')

@@ -13,7 +13,7 @@
 
     <div class="row">
         <div class="col-6">
-            <h2>Daftar profile</h2>
+            <h2 class="text-white">Daftar profile</h2>
         </div>
         <div class="col-6">
             <button type="button" class="btn btn-primary float-right btn-sm" data-toggle="modal" data-target="#exampleModal">
@@ -96,14 +96,14 @@
     </tr>
     @foreach ($data_profile as $profile)
         <tr>
-            <td>{{$profile->nik}}</td>
-            <td>{{$profile->nama}}</td>
-            <td>{{$profile->alamat}}</td>
-            <td>{{$profile->alumni}}</td>
-            <td>{{$profile->agama}}</td>
-            <td>{{$profile->tgl_lahir}}</td>
-            <td>{{$profile->deskripsi}}</td>
-        <td><a href="/pilput/edit/{{$profile->id}}" class="btn btn-sm btn-warning">Edit</a><a href="/plput/delete" class="btn btn-sm btn-danger">Delete</a></td>
+            <td class="bg-light">{{$profile->nik}}</td>
+            <td class="bg-light">{{$profile->nama}}</td>
+            <td class="bg-light">{{$profile->alamat}}</td>
+            <td class="bg-light">{{$profile->alumni}}</td>
+            <td class="bg-light">{{$profile->agama}}</td>
+            <td class="bg-light">{{$profile->tgl_lahir}}</td>
+            <td class="bg-light">{{$profile->deskripsi}}</td>
+        <td class="bg-light"><a href="/pilput/edit/{{$profile->id}}" class="btn btn-sm btn-warning">Edit</a><a href="/plput/delete" class="btn btn-sm btn-danger">Delete</a></td>
         </tr>
     @endforeach
 </table>
