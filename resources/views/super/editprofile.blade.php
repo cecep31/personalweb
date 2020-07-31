@@ -8,9 +8,11 @@
     <div class="row">
         <div class="col-12">
             <h2>Edit data profile</h2>
+            <hr>
         </div>
+
         <div class="col-12">
-            <form action="/pilput/tambah" method="POST">
+            <form action="/pilput/update/{{$profile->id}}" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group">
                   <label for="exampleInputEmail1">NIK</label>
@@ -48,13 +50,17 @@
                     <label for="exampleFormControlTextarea1">Keterangan</label>
                     <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3">{{ $profile->deskripsi }}</textarea>
                 </div>
-                <button type="submit" class="btn btn-primary float-right">Simpan</button>
+                <button type="submit" class="btn btn-primary float-right btn-sm">Simpan</button>
+                <br>
             </form>
+            <br>
 
             </div>
         </div>
     </div>
+
 </div>
+<br>
 
 
 

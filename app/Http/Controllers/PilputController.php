@@ -80,7 +80,9 @@ class PilputController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $profile= \App\profile::find($id);
+        $profile->update($request->all());
+        return redirect('/pilput/lihat')->with('sukses','Data berhasil di ubah');
     }
 
     /**
@@ -89,8 +91,10 @@ class PilputController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        $profile = \App\profile::find($id);
+        $profile->delete();
+        return redirect('/pilput/lihat')->with('sukses','berhasil di hapus');
     }
 }

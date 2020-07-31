@@ -8,6 +8,9 @@
     @if(session('sukses'))
         <div class="alert alert-info float-center"  role="alert">
             {{session('sukses')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
         </div>
     @endif
 
@@ -31,7 +34,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                        <form action="/pilput/tambah" method="POST">
+                        <form action="/pilput/add" method="POST">
                             {{ csrf_field() }}
                             <div class="form-group">
                               <label for="exampleInputEmail1">NIK</label>
@@ -103,8 +106,10 @@
             <td class="bg-light">{{$profile->agama}}</td>
             <td class="bg-light">{{$profile->tgl_lahir}}</td>
             <td class="bg-light">{{$profile->deskripsi}}</td>
-        <td class="bg-light"><a href="/pilput/edit/{{$profile->id}}" class="btn btn-sm btn-warning">Edit</a><a href="/plput/delete" class="btn btn-sm btn-danger">Delete</a></td>
-        </tr>
+            <td class="bg-light">
+                <a href="/pilput/edit/{{$profile->id}}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="/pilput/delete/{{$profile->id}}" class="btn btn-sm btn-danger" onclick="return confirm('hapus data ?')">Delete</a></td>
+             </tr>
     @endforeach
 </table>
     </div>
