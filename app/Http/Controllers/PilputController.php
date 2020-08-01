@@ -97,4 +97,8 @@ class PilputController extends Controller
         $profile->delete();
         return redirect('/pilput/lihat')->with('sukses','berhasil di hapus');
     }
+    public function daskbord()
+    {
+        return view('daskbord');
+    }
 }

@@ -25,3 +25,12 @@ Route::post('/pilput/add', 'PilputController@create');
 Route::get('/pilput/edit/{id}', 'PilputController@edit');
 Route::post('/pilput/update/{id}', 'PilputController@update');
 Route::get('/pilput/delete/{id}', 'PilputController@delete');
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/{name}/daskbord', 'PilputController@daskbord');
