@@ -44,7 +44,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nama</label>
                                 <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="masukan nama">
-                                <
+
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Universitas</label>

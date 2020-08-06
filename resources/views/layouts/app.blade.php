@@ -35,10 +35,24 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+
+
                     <ul class="navbar-nav mr-auto">
+                        @guest
+                            @if (Route::has('register'))
+
+                            @endif
+                            @else
                         <li class="nav-item{{ request()->is('admin') ? ' active':'' }}">
                             <a class="nav-link" href="/{{ Auth::user()->name }}/daskbord">Daskbord</a>
                         </li>
+                        <li class="nav-item{{ request()->is('prodiles') ? ' active':'' }}">
+                            <a class="nav-link" href="/pilput/lihat">Profiles</a>
+                        </li>
+                        @endguest
+
+
+
 
                     </ul>
 
